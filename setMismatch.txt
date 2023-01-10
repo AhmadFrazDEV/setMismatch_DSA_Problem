@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        
+        vector<int>v;
+        int a;
+        for(int i=1 ; i<nums.size() ; i++)
+        {
+            if(nums[i] != i)
+            {
+                nums[i] = i;
+                a = i;
+            }
+        }
+        v.push_back(nums[a - 1]);
+        v.push_back(nums[a]);
+        return v;
+    }
+};
